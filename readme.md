@@ -21,12 +21,17 @@ This repository contains a Python implementation of the CHOMP (Covariant Hamilto
 ## Installation
 
 ### Using Anaconda:
+
 Run this on the terminal to create a new environment and install the dependencies:
+
 `conda create -n chomp_py python=3.10`
+
 `conda activate pybullet_robot_base`
+
 `conda install -c conda-forge pybullet numpy matplotlib`
 
 ## Usage
+
 Run the Script: Execute the script in your terminal:
 
 `python CHOMP_T1.py`
