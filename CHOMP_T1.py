@@ -5,7 +5,7 @@ import time
 import matplotlib.pyplot as plt 
 
 class CHOMPPlanner:
-    def __init__(self, robot_id, joint_indices, start_conf, goal_conf, obstacle_cost_weight=1.0, smoothness_cost_weight=1.0, eta=0.5):
+    def __init__(self, robot_id, joint_indices, start_conf, goal_conf, obstacle_cost_weight=0.5, smoothness_cost_weight=0.5, eta=0.5):
         self.robot_id = robot_id
         self.joint_indices = joint_indices
         self.start_conf = np.array(start_conf)
@@ -163,7 +163,7 @@ if __name__ == "__main__":
         print(f"Smoothness Value = {smoothness_value}")
         print(f"Collision Value = {collision_value}")
         # print(f"Total Gradient: {total_gradient}")
-
+        
         # Store the values for plotting
         objective_values.append(objective_value)
         smoothness_values.append(smoothness_value)
@@ -178,6 +178,14 @@ if __name__ == "__main__":
     # Print optimized trajectory
     print("Optimized trajectory:")
     print(planner.trajectory)
+
+    # Display the final trajectory
+    for waypoint in planner.trajectory:
+        for i, joint_index in enumerate(joint_indices):
+            p.resetJointState(robot_id, joint_index, waypoint[i])
+        p.stepSimulation()
+        time.sleep(0.5)  # Optional delay to visualize each step
+
 
     # Plot the objective, smoothness, and collision values over iterations
     plt.figure(figsize=(12, 6))
