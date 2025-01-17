@@ -35,3 +35,14 @@ Run this on the terminal to create a new environment and install the dependencie
 Run the Script: Execute the script in your terminal:
 
 `python CHOMP_T1.py`
+
+## Visualisation Test
+
+Run this script :
+`python visualisation_test.py`
+
+
+## Execution Time and Collision Test
+
+Run this script: 
+`python time_test.py`
