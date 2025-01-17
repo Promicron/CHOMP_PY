@@ -45,4 +45,4 @@ Run this script :
 ## Execution Time and Collision Test
 
 Run this script: 
-`python time_test.py`
+`python Time_test.py`
