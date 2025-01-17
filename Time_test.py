@@ -100,8 +100,8 @@ if __name__ == "__main__":
         [1.0, -0.284, 0.1],
     ]
 
-    for _ in range(7):
-        target_positions.append([random.uniform(0.4, 0.9), random.uniform(-0.5, 0.5), random.uniform(0.2, 0.4)])
+    for _ in range(3):
+        target_positions.append([random.uniform(0.1, 0.9), random.uniform(-0.5, 0.5), random.uniform(0.2, 0.4)])
 
     for target_position in target_positions:
         planner = CHOMPPlanner(robot_id, joint_indices, start_conf, goal_conf=np.zeros(len(joint_indices)))
